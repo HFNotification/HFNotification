@@ -75,6 +75,10 @@
       <HintPath>..\packages\Xamarin.Firebase.Messaging.32.940.0-beta3\lib\MonoAndroid41\Xamarin.Firebase.Messaging.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Base.32.940.0-beta3\lib\MonoAndroid41\Xamarin.GooglePlayServices.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Basement, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.32.940.0-beta3\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
       <Private>True</Private>

@@ -1,16 +1,18 @@
 ﻿using Android.App;
-using Android.Widget;
+using Android.Gms.Common;
+using Android.Net;
 using Android.OS;
-using System;
-using Android.Content;
-using Java.Lang;
-using System.Net;
+using Android.Widget;
+using Android.Util;
+
 
 namespace HFNotification
 {
     [Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
+        const string TAG = "MainActivity";
+        TextView msgText;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -22,56 +24,47 @@ namespace HFNotification
             else
             {
                 // code
+                //MessageBox.Show("Internet connections are not available");
             }
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
+
+            //Test if GPS is available
+            msgText = FindViewById<TextView>(Resource.Id.msgText);
+
+            IsPlayServicesAvailable();
         }
+
 
         //Check if Internet is available
         public bool isOnline()
         {
-            Runtime runtime = Runtime.GetRuntime();
-            try
-            {
-                Java.Lang.Process ipProcess = runtime.Exec("/system/bin/ping -c 1 8.8.8.8");
-                int exitValue = ipProcess.WaitFor();
-                return (exitValue == 0);
-            }
-            catch (Java.IO.IOException e) { e.PrintStackTrace(); }
-            catch (InterruptedException e) { e.PrintStackTrace(); }
-
-            return false;
+            ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
+            NetworkInfo activeConnection = connectivityManager.ActiveNetworkInfo;
+            return (activeConnection != null) && activeConnection.IsConnected;
         }
 
-        // Another method to check if Internet is available
-        public bool CheckInternetConnection()
+        public bool IsPlayServicesAvailable()
         {
-            string CheckUrl = "http://google.com";
-
-            try
+            int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+            if (resultCode != ConnectionResult.Success)
             {
-                HttpWebRequest iNetRequest = (HttpWebRequest)WebRequest.Create(CheckUrl);
-
-                iNetRequest.Timeout = 5000;
-
-                WebResponse iNetResponse = iNetRequest.GetResponse();
-
-                // Console.WriteLine ("...connection established..." + iNetRequest.ToString ());
-                iNetResponse.Close();
-
-                return true;
-
-            }
-            catch (WebException ex)
-            {
-
-                // Console.WriteLine (".....no connection..." + ex.ToString ());
-
+                if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+                    msgText.Text = GoogleApiAvailability.Instance.GetErrorString(resultCode);
+                else
+                {
+                    msgText.Text = "Sorry, this device is not supported";
+                    Finish();
+                }
                 return false;
+            }
+            else
+            {
+                msgText.Text = "Google Play Services is available.";
+                return true;
             }
         }
 
 
     }
 }
-
