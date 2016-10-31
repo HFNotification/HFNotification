@@ -31,6 +31,15 @@ namespace HFNotification
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f010002
+			public const int circleCrop = 2130771970;
+			
+			// aapt resource value: 0x7f010001
+			public const int imageAspectRatio = 2130771969;
+			
+			// aapt resource value: 0x7f010000
+			public const int imageAspectRatioAdjust = 2130771968;
+			
 			static Attribute()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -57,6 +66,44 @@ namespace HFNotification
 			}
 		}
 		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int adjust_height = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int adjust_width = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int none = 2131099650;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
+		public partial class Integer
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int google_play_services_version = 2130968576;
+			
+			static Integer()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Integer()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
 			
@@ -76,11 +123,32 @@ namespace HFNotification
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f050008
+			public const int ApplicationName = 2131034120;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f050007
+			public const int Hello = 2131034119;
+			
+			// aapt resource value: 0x7f050000
+			public const int common_google_play_services_unknown_issue = 2131034112;
+			
+			// aapt resource value: 0x7f050003
+			public const int default_web_client_id = 2131034115;
+			
+			// aapt resource value: 0x7f050004
+			public const int firebase_database_url = 2131034116;
+			
+			// aapt resource value: 0x7f050001
+			public const int gcm_defaultSenderId = 2131034113;
+			
+			// aapt resource value: 0x7f050005
+			public const int google_api_key = 2131034117;
+			
+			// aapt resource value: 0x7f050002
+			public const int google_app_id = 2131034114;
+			
+			// aapt resource value: 0x7f050006
+			public const int google_crash_reporting_api_key = 2131034118;
 			
 			static String()
 			{
@@ -88,6 +156,33 @@ namespace HFNotification
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Styleable
+		{
+			
+			public static int[] LoadingImageView = new int[] {
+					2130771968,
+					2130771969,
+					2130771970};
+			
+			// aapt resource value: 2
+			public const int LoadingImageView_circleCrop = 2;
+			
+			// aapt resource value: 1
+			public const int LoadingImageView_imageAspectRatio = 1;
+			
+			// aapt resource value: 0
+			public const int LoadingImageView_imageAspectRatioAdjust = 0;
+			
+			static Styleable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Styleable()
 			{
 			}
 		}
