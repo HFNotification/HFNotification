@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "953128020008",
+    "firebase_url": "https://hfnotification.firebaseio.com",
+    "project_id": "hfnotification",
+    "storage_bucket": "hfnotification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953128020008:android:3a926b055fb9e83b",
+        "android_client_info": {
+          "package_name": "com.smstudents.HFNotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953128020008-u33ijqgr1gkmo40nbgn3bgqt5c36bb67.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnLdkcztBGsFcsYPtpNK-mGbBm06xl9fE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
