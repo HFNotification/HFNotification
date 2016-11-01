@@ -7,10 +7,10 @@ using Android.Widget;
 
 namespace HFNotification
 {
-	[Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "@string/ApplicationName", /*MainLauncher = true, */Icon = "@drawable/icon")]
 	public class StartUpActivity : Activity
 	{
-		const string TAG = "MainActivity";
+		//const string TAG = "MainActivity";
 		TextView msgText;
 		protected override void OnCreate(Bundle bundle)
 		{

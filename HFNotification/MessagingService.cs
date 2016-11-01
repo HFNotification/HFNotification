@@ -1,7 +1,7 @@
 using Android.App;
 using Android.Content;
 using Android.Media;
-using Android.Support.V4.App;
+//using Android.Support.V7.App;
 using Firebase.Messaging;
 
 namespace HFNotification
@@ -28,7 +28,7 @@ namespace HFNotification
 			var pendingIntent = PendingIntent.GetActivity(this, 0 /* Request code */, intent, PendingIntentFlags.OneShot);
 
 			var defaultSoundUri = RingtoneManager.GetDefaultUri(RingtoneType.Notification);
-			var notificationBuilder = new NotificationCompat.Builder(this)
+			var notificationBuilder = new Android.Support.V4.App.NotificationCompat.Builder(this)
 				.SetSmallIcon(Resource.Drawable.Icon)
 				.SetContentTitle("Hey ho")
 				.SetContentText(messageBody)
