@@ -1,13 +1,14 @@
-using System;
 using Android.App;
 using Firebase.Iid;
 using System.Net;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace HFNotification
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
-    public class IIDService : FirebaseInstanceIdService
+    public class InstanceIdentificationService : FirebaseInstanceIdService
     {
         const string TAG = "IIDService";
 
@@ -26,11 +27,7 @@ namespace HFNotification
 
         void SendRegistrationToServer(string token)
         {
-            //TODO: (!Dont send token from here in future ) add login check.
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/14q7hw11");
-            httpWebRequest.Headers.Add("Token:" + token);
-            httpWebRequest.Method = "POST";
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            //TODO: Refresh token on server side.
         }
     }
 }

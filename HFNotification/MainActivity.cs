@@ -3,7 +3,6 @@ using Android.Gms.Common;
 using Android.Net;
 using Android.OS;
 using Android.Widget;
-using Android.Util;
 
 
 namespace HFNotification
@@ -16,23 +15,37 @@ namespace HFNotification
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+            
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
             //Check if Internet is available
+
             if (isOnline())
             {
-                // code here
+                //Test if GPS is available
+                msgText = FindViewById<TextView>(Resource.Id.msgText);
+                if (IsPlayServicesAvailable())
+                {
+                    if (!LoginService.Login())
+                    {
+                        StartActivity(typeof(LoginActivity));
+                        Finish();
+                    }
+
+                }
+
+
             }
             else
             {
                 // code
                 //MessageBox.Show("Internet connections are not available");
             }
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
 
-            //Test if GPS is available
-            msgText = FindViewById<TextView>(Resource.Id.msgText);
 
-            IsPlayServicesAvailable();
+
+
         }
 
 

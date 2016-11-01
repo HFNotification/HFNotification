@@ -289,6 +289,9 @@ namespace HFNotification
 			// aapt resource value: 0x7f070007
 			public const int dark = 2131165191;
 			
+			// aapt resource value: 0x7f07000b
+			public const int email = 2131165195;
+			
 			// aapt resource value: 0x7f070003
 			public const int icon_only = 2131165187;
 			
@@ -296,13 +299,28 @@ namespace HFNotification
 			public const int light = 2131165192;
 			
 			// aapt resource value: 0x7f070009
-			public const int msgText = 2131165193;
+			public const int linearLayout1 = 2131165193;
+			
+			// aapt resource value: 0x7f07000e
+			public const int loginbutton = 2131165198;
+			
+			// aapt resource value: 0x7f07000f
+			public const int msgText = 2131165199;
 			
 			// aapt resource value: 0x7f070002
 			public const int none = 2131165186;
 			
+			// aapt resource value: 0x7f07000d
+			public const int password = 2131165197;
+			
 			// aapt resource value: 0x7f070004
 			public const int standard = 2131165188;
+			
+			// aapt resource value: 0x7f07000c
+			public const int textView1 = 2131165196;
+			
+			// aapt resource value: 0x7f07000a
+			public const int textView2 = 2131165194;
 			
 			// aapt resource value: 0x7f070005
 			public const int wide = 2131165189;
@@ -337,7 +355,10 @@ namespace HFNotification
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Login = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{
