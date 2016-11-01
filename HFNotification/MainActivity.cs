@@ -7,46 +7,46 @@ using Android.Widget;
 
 namespace HFNotification
 {
-    [Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : Activity
-    {
-        const string TAG = "MainActivity";
-        TextView msgText;
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
+	[Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon")]
+	public class MainActivity : Activity
+	{
+		const string TAG = "MainActivity";
+		TextView msgText;
+		protected override void OnCreate(Bundle bundle)
+		{
+			base.OnCreate(bundle);
 
-            
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
-            //Check if Internet is available
+			
+			// Set our view from the "main" layout resource
+			SetContentView(Resource.Layout.Main);
+			//Check if Internet is available
 
-            if (isOnline())
-            {
-                //Test if GPS is available
-                msgText = FindViewById<TextView>(Resource.Id.msgText);
-                if (IsPlayServicesAvailable())
-                {
-                    if (!LoginService.Login())
-                    {
-                        StartActivity(typeof(LoginActivity));
-                        Finish();
-                    }
+			if (isOnline())
+			{
+				//Test if GPS is available
+				msgText = FindViewById<TextView>(Resource.Id.msgText);
+				if (IsPlayServicesAvailable())
+				{
+					if (!LoginService.Login())
+					{
+						StartActivity(typeof(LoginActivity));
+						Finish();
+					}
 
-                }
-
-
-            }
-            else
-            {
-                // code
-                //MessageBox.Show("Internet connections are not available");
-            }
+				}
 
 
+			}
+			else
+			{
+				// code
+				//MessageBox.Show("Internet connections are not available");
+			}
 
 
-        }
+
+
+		}
 
 
 		//Check if Internet is available

@@ -6,16 +6,16 @@ using System.IO;
 
 namespace HFNotification
 {
-    [Service]
-    [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
-    public class InstanceIdentificationService : FirebaseInstanceIdService
-    {
-        const string TAG = "IIDService";
+	[Service]
+	[IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
+	public class InstanceIdentificationService : FirebaseInstanceIdService
+	{
+		const string TAG = "IIDService";
 
 		/**
-         * Called if InstanceID token is updated. This may occur if the security of
-         * the previous token had been compromised
-         */
+		* Called if InstanceID token is updated. This may occur if the security of
+		* the previous token had been compromised
+		*/
 		public override void OnTokenRefresh()
 		{
 			// Get updated InstanceID token.
@@ -25,9 +25,9 @@ namespace HFNotification
 			SendRegistrationToServer(FirebaseInstanceId.Instance.Token);
 		}
 
-        void SendRegistrationToServer(string token)
-        {
-            //TODO: Refresh token on server side.
-        }
-    }
+		void SendRegistrationToServer(string token)
+		{
+			//TODO: Refresh token on server side.
+		}
+	}
 }
