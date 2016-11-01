@@ -62,8 +62,8 @@ namespace HFNotification
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f060010
-			public const int common_google_signin_btn_text_dark = 2131099664;
+			// aapt resource value: 0x7f060012
+			public const int common_google_signin_btn_text_dark = 2131099666;
 			
 			// aapt resource value: 0x7f060000
 			public const int common_google_signin_btn_text_dark_default = 2131099648;
@@ -77,8 +77,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f060003
 			public const int common_google_signin_btn_text_dark_pressed = 2131099651;
 			
-			// aapt resource value: 0x7f060011
-			public const int common_google_signin_btn_text_light = 2131099665;
+			// aapt resource value: 0x7f060013
+			public const int common_google_signin_btn_text_light = 2131099667;
 			
 			// aapt resource value: 0x7f060004
 			public const int common_google_signin_btn_text_light_default = 2131099652;
@@ -92,8 +92,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f060007
 			public const int common_google_signin_btn_text_light_pressed = 2131099655;
 			
-			// aapt resource value: 0x7f060012
-			public const int common_plus_signin_btn_text_dark = 2131099666;
+			// aapt resource value: 0x7f060014
+			public const int common_plus_signin_btn_text_dark = 2131099668;
 			
 			// aapt resource value: 0x7f060008
 			public const int common_plus_signin_btn_text_dark_default = 2131099656;
@@ -107,8 +107,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f06000b
 			public const int common_plus_signin_btn_text_dark_pressed = 2131099659;
 			
-			// aapt resource value: 0x7f060013
-			public const int common_plus_signin_btn_text_light = 2131099667;
+			// aapt resource value: 0x7f060015
+			public const int common_plus_signin_btn_text_light = 2131099669;
 			
 			// aapt resource value: 0x7f06000c
 			public const int common_plus_signin_btn_text_light_default = 2131099660;
@@ -121,6 +121,12 @@ namespace HFNotification
 			
 			// aapt resource value: 0x7f06000f
 			public const int common_plus_signin_btn_text_light_pressed = 2131099663;
+			
+			// aapt resource value: 0x7f060010
+			public const int theme_custom_background = 2131099664;
+			
+			// aapt resource value: 0x7f060011
+			public const int theme_devicedefault_background = 2131099665;
 			
 			static Color()
 			{
@@ -264,6 +270,9 @@ namespace HFNotification
 			// aapt resource value: 0x7f02002a
 			public const int Icon = 2130837546;
 			
+			// aapt resource value: 0x7f02002b
+			public const int progressbar1 = 2130837547;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -277,35 +286,38 @@ namespace HFNotification
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int adjust_height = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int adjust_height = 2131230720;
 			
-			// aapt resource value: 0x7f070001
-			public const int adjust_width = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int adjust_width = 2131230721;
 			
-			// aapt resource value: 0x7f070006
-			public const int auto = 2131165190;
+			// aapt resource value: 0x7f080006
+			public const int auto = 2131230726;
 			
-			// aapt resource value: 0x7f070007
-			public const int dark = 2131165191;
+			// aapt resource value: 0x7f080007
+			public const int dark = 2131230727;
 			
-			// aapt resource value: 0x7f070003
-			public const int icon_only = 2131165187;
+			// aapt resource value: 0x7f080003
+			public const int icon_only = 2131230723;
 			
-			// aapt resource value: 0x7f070008
-			public const int light = 2131165192;
+			// aapt resource value: 0x7f080008
+			public const int light = 2131230728;
 			
-			// aapt resource value: 0x7f070009
-			public const int msgText = 2131165193;
+			// aapt resource value: 0x7f080009
+			public const int msgText = 2131230729;
 			
-			// aapt resource value: 0x7f070002
-			public const int none = 2131165186;
+			// aapt resource value: 0x7f080002
+			public const int none = 2131230722;
 			
-			// aapt resource value: 0x7f070004
-			public const int standard = 2131165188;
+			// aapt resource value: 0x7f08000a
+			public const int progressBar1 = 2131230730;
 			
-			// aapt resource value: 0x7f070005
-			public const int wide = 2131165189;
+			// aapt resource value: 0x7f080004
+			public const int standard = 2131230724;
+			
+			// aapt resource value: 0x7f080005
+			public const int wide = 2131230725;
 			
 			static Id()
 			{
@@ -442,6 +454,22 @@ namespace HFNotification
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int Theme_Custom = 2131165184;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
