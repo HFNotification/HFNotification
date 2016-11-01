@@ -32,6 +32,11 @@ namespace HFNotification
 						StartActivity(typeof(LoginActivity));
 						Finish();
 					}
+					else
+					{
+						StartActivity(typeof(MainActivity));
+						Finish();
+					}
 
 				}
 
