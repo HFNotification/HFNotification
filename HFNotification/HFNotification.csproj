@@ -152,8 +152,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\app_bar.axml" />
-    <AndroidResource Include="Resources\layout\headerdrawerlayout.axml" />
-    <AndroidResource Include="Resources\layout\homeLayout.axml" />
+    <AndroidResource Include="Resources\layout\headerdrawerlayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\homeLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
