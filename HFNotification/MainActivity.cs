@@ -10,7 +10,7 @@ using Android.Widget;
 
 namespace HFNotification
 {
-	[Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "@string/ApplicationName", Icon = "@drawable/icon")]
 	public class MainActivity : AppCompatActivity
 	{
 

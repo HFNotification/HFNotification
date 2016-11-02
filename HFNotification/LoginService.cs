@@ -1,5 +1,4 @@
 using System.Net;
-using Newtonsoft.Json;
 using System.IO;
 using Android.Content;
 using Android.Preferences;
@@ -12,7 +11,7 @@ namespace HFNotification
 		static public bool Login(string email, string password, string token)
 		{
 			//Login using user inputed credentials
-			if (SendCredentials(email,password,token))
+			if (NewCredentials(email,password,token))
 			{
 				ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
 				ISharedPreferencesEditor editor = preferences.Edit().Clear();
@@ -31,27 +30,39 @@ namespace HFNotification
 			ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
 			if (preferences.GetBoolean("loged",false))
 			{
-				if(SendCredentials(preferences.GetString("email", "nomail"), preferences.GetString("password", "nopassword"), preferences.GetString("token", "notoken")))
+				if(NewCredentials(preferences.GetString("email", "nomail"), preferences.GetString("password", "nopassword"), preferences.GetString("token", "notoken")))
 				{
 					return true;
 				}
 			}
 			return false;
 		}
-	   static private bool SendCredentials(string email, string password, string token)
+
+		static private bool NewCredentials(string email, string password, string token)
 		{
-			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/14q7hw11");
-			httpWebRequest.ContentType = "application/json";
+			var data = "email=" + email;
+			data += "&password=" + password;
+			data += "&token=" + token;
+			return SendRequest(data);
+		}
+		static public bool UpdateCredentials(string email, string password, string newtoken, string oldtoken)
+		{
+			var data = "email=" + email;
+			data += "&password=" + password;
+			data += "&newtoken=" + newtoken;
+			data += "&oldtoken=" + oldtoken;
+			return SendRequest(data);
+		}
+		static private bool SendRequest(string data)
+		{
+			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/tezb5zte");
+			httpWebRequest.ContentType = "application/x-www-form-urlencoded";
 			httpWebRequest.Method = "POST";
+			//WebUtility.UrlEncode(data);
+			httpWebRequest.ContentLength = data.Length;
 			using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
 			{
-				string json = JsonConvert.SerializeObject(new
-				{
-					email = email,
-					password = password,
-					deviceid = token
-				});
-				streamWriter.Write(json);
+				streamWriter.Write(data);
 				streamWriter.Flush();
 			}
 			var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
@@ -60,6 +71,7 @@ namespace HFNotification
 			{
 				result = streamReader.ReadToEnd();
 			}
+
 			//TODO: parse resulting json
 			return true;
 		}

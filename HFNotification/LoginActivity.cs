@@ -6,7 +6,7 @@ using Firebase.Iid;
 
 namespace HFNotification
 {
-	[Activity(Label = "LoginActivity", Theme = "@android:style/Theme.NoTitleBar")]
+	[Activity(Label = "LoginActivity", Theme = "@android:style/Theme.Material.Light")]
 	public class LoginActivity : Activity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -20,8 +20,9 @@ namespace HFNotification
 			btnLogin.Click += delegate {
 				if(LoginService.Login(txtEmail.Text,txtPassword.Text, FirebaseInstanceId.Instance.Token))
 				{
-					//TODO Go to main activity;
-				}
+                    StartActivity(typeof(MainActivity));
+                    Finish();
+                }
 			};
 		}
 	}
