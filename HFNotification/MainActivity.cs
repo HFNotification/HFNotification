@@ -6,14 +6,14 @@ using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-
+using Firebase.Iid;
 
 namespace HFNotification
 {
 	[Activity(Label = "@string/ApplicationName", Icon = "@drawable/icon")]
 	public class MainActivity : AppCompatActivity
 	{
-
+		const string TAG = "MainActivity";
 		DrawerLayout drawerLayout;
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -21,14 +21,13 @@ namespace HFNotification
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.Main);
 			drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-
 			// Init toolbar
 			var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.app_bar);
 			SetSupportActionBar(toolbar);
 			SupportActionBar.SetTitle(Resource.String.ApplicationName);
 			SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 			SupportActionBar.SetDisplayShowHomeEnabled(true);
-
+			Android.Util.Log.Debug(TAG, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
 			// Attach item selected handler to navigation view
 			var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
 			navigationView.NavigationItemSelected += NavigationView_NavigationItemSelected;

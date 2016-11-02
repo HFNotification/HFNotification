@@ -9,8 +9,8 @@ namespace HFNotification
     {
         static StoringService()
         {
-            Messages = new List<string>();
-        }
+			Messages = new List<string> { "https://www.xamarin.com/", "https://github.com/", "https://firebase.google.com/docs/cloud-messaging/", "https://tortoisegit.org/", "https://www.xamarin.com/", "https://github.com/", "https://firebase.google.com/docs/cloud-messaging/", "https://tortoisegit.org/", "Bulbs", "Tubers" };
+		}
         public static List<string> Messages { get; private set; }
         public static void SaveMessages()
         {
