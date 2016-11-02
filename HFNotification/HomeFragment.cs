@@ -15,19 +15,25 @@ namespace HFNotification
 {
 	public class HomeFragment : Fragment
 	{
+		private ListView myListView;
 		public override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
-
-			// Create your fragment here
 		}
-
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			// Use this to return your custom view for this Fragment
-			// return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 			View view = inflater.Inflate(Resource.Layout.homeLayout, container, false);
-			return view;//base.OnCreateView (inflater.Inflate(Resource.Layout.homeLayout, container, savedInstanceState);
+			myListView = view.FindViewById<ListView>(Resource.Id.lvNotifications);
+			string[] items = new string[] { "https://www.xamarin.com/", "https://github.com/", "https://firebase.google.com/docs/cloud-messaging/", "https://tortoisegit.org/", "Bulbs", "Tubers", "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers3" };
+			myListView.Adapter = new ArrayAdapter<String>(view.Context, Android.Resource.Layout.SimpleDropDownItem1Line, items);
+			myListView.ItemClick += (sender, e) =>
+			{
+				var url = myListView.GetItemAtPosition(e.Position).ToString();
+				var uri = Android.Net.Uri.Parse(url);
+				var intent = new Intent(Intent.ActionView, uri);
+				StartActivity(intent);
+			};
+			return view;
 		}
 	}
 }
