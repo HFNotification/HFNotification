@@ -15,12 +15,9 @@ namespace HFNotification
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
-
-
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.StartUp);
 			//Check if Internet is available
-
 			if (isOnline())
 			{
 				//Test if GPS is available
@@ -37,22 +34,14 @@ namespace HFNotification
 						StartActivity(typeof(MainActivity));
 						Finish();
 					}
-
 				}
-
-
 			}
 			else
 			{
 				// code
 				//MessageBox.Show("Internet connections are not available");
 			}
-
-
-
-
 		}
-
 
 		//Check if Internet is available
 		public bool isOnline()
@@ -82,7 +71,5 @@ namespace HFNotification
 				return true;
 			}
 		}
-
-
 	}
 }
