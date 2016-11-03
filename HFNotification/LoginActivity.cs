@@ -3,6 +3,7 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using Firebase.Iid;
+using System.Net;
 
 namespace HFNotification
 {
@@ -17,12 +18,24 @@ namespace HFNotification
 			Button btnLogin= FindViewById<Button>(Resource.Id.loginbutton);
 			EditText txtEmail = FindViewById<EditText>(Resource.Id.email);
 			EditText txtPassword = FindViewById<EditText>(Resource.Id.password);
+			TextView txtError = FindViewById<TextView>(Resource.Id.txterror);
 			btnLogin.Click += delegate {
-				if(LoginService.Login(txtEmail.Text,txtPassword.Text, FirebaseInstanceId.Instance.Token))
+				try
 				{
-                    StartActivity(typeof(MainActivity));
-                    Finish();
-                }
+					if (LoginService.Login(txtEmail.Text, txtPassword.Text, FirebaseInstanceId.Instance.Token))
+					{
+						StartActivity(typeof(MainActivity));
+						Finish();
+					}
+					else
+					{
+						txtError.Text = "Login or password is incorrect";
+					}
+				}
+				catch (WebException)
+				{
+					txtError.Text = "Could not resolve connection to server";
+				}
 			};
 		}
 	}

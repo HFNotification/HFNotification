@@ -10,7 +10,7 @@
         p1:textAppearance="?android:attr/textAppearanceMedium"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/textView2" />
+        p1:id="@+id/txtemail" />
     <EditText
         p1:inputType="textEmailAddress"
         p1:layout_width="match_parent"
@@ -21,7 +21,7 @@
         p1:textAppearance="?android:attr/textAppearanceMedium"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/textView1"
+        p1:id="@+id/txtpassword"
         p1:textAlignment="center" />
     <EditText
         p1:inputType="textPassword"
@@ -33,4 +33,12 @@
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:id="@+id/loginbutton" />
+    <TextView
+        p1:textAppearance="?android:attr/textAppearanceSmall"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/txterror"
+        p1:layout_marginBottom="22.5dp"
+        p1:gravity="center"
+        p1:textColor="@android:color/holo_red_light" />
 </LinearLayout>

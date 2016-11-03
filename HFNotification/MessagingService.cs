@@ -14,13 +14,12 @@ namespace HFNotification
 
 		public override void OnMessageReceived(RemoteMessage message)
 		{
-			// TODO: Handle FCM messages here.
-			SendNotification(message.Data["msg"]);
+			// TODO: Handle FCM messages here
+			StoringService.LoadMessages();
+			StoringService.Messages.Add(message.Data["url"]);
+			StoringService.SaveMessages();
+			SendNotification(message.Data["url"]);
 		}
-
-		/**
-         * Create and show a simple notification containing the received FCM message.
-         */
 		void SendNotification(string messageBody)
 		{
 			var intent = new Intent(this, typeof(MainActivity));

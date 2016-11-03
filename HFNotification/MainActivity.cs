@@ -19,6 +19,7 @@ namespace HFNotification
 		{
 
 			base.OnCreate(savedInstanceState);
+			StoringService.LoadMessages();
 			SetContentView(Resource.Layout.Main);
 			drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 			// Init toolbar
@@ -46,6 +47,7 @@ namespace HFNotification
 		//define custom title text
 		protected override void OnResume()
 		{
+			StoringService.LoadMessages();
 			SupportActionBar.SetTitle(Resource.String.ApplicationName);
 			base.OnResume();
 		}

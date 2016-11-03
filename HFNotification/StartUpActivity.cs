@@ -3,6 +3,7 @@ using Android.Gms.Common;
 using Android.Net;
 using Android.OS;
 using Android.Widget;
+using System.Net;
 
 
 namespace HFNotification
@@ -24,15 +25,22 @@ namespace HFNotification
 				msgText = FindViewById<TextView>(Resource.Id.msgText);
 				if (IsPlayServicesAvailable())
 				{
-					if (!LoginService.Login())
+					try
 					{
-						StartActivity(typeof(LoginActivity));
-						Finish();
+						if (!LoginService.Login())
+						{
+							StartActivity(typeof(LoginActivity));
+							Finish();
+						}
+						else
+						{
+							StartActivity(typeof(MainActivity));
+							Finish();
+						}
 					}
-					else
+					catch (WebException)
 					{
-						StartActivity(typeof(MainActivity));
-						Finish();
+						//TODO show message Couldnt not connect ot server
 					}
 				}
 			}
@@ -42,7 +50,6 @@ namespace HFNotification
 				//MessageBox.Show("Internet connections are not available");
 			}
 		}
-
 		//Check if Internet is available
 		public bool isOnline()
 		{
@@ -50,7 +57,6 @@ namespace HFNotification
 			NetworkInfo activeConnection = connectivityManager.ActiveNetworkInfo;
 			return (activeConnection != null) && activeConnection.IsConnected;
 		}
-
 		public bool IsPlayServicesAvailable()
 		{
 			int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);

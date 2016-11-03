@@ -55,7 +55,7 @@ namespace HFNotification
 		}
 		static private bool SendRequest(string data)
 		{
-			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/tezb5zte");
+			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/pk05y2pk");
 			httpWebRequest.ContentType = "application/x-www-form-urlencoded";
 			httpWebRequest.Method = "POST";
 			//WebUtility.UrlEncode(data);
@@ -69,11 +69,12 @@ namespace HFNotification
 			string result;
 			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
-				result = streamReader.ReadToEnd();
+				 result = streamReader.ReadToEnd();
 			}
 
-			//TODO: parse resulting json
-			return true;
+				//TODO: parse resulting json
+				return true;
+			
 		}
 		//TODO Logout method
 	}
