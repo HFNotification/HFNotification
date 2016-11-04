@@ -48,6 +48,7 @@ namespace HFNotification
 			{
 				// code
 				//MessageBox.Show("Internet connections are not available");
+				Toast.MakeText(this, "Internet connections are not available", ToastLength.Long).Show();
 			}
 		}
 		//Check if Internet is available
