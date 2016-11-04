@@ -2239,8 +2239,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a008c
 			public const int action0 = 2131361932;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int action_attach = 2131361947;
+			// aapt resource value: 0x7f0a009c
+			public const int action_attach = 2131361948;
 			
 			// aapt resource value: 0x7f0a0065
 			public const int action_bar = 2131361893;
@@ -2284,8 +2284,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0046
 			public const int action_mode_close_button = 2131361862;
 			
-			// aapt resource value: 0x7f0a009a
-			public const int action_refresh = 2131361946;
+			// aapt resource value: 0x7f0a009b
+			public const int action_refresh = 2131361947;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int activity_chooser_view_content = 2131361863;
@@ -2497,17 +2497,17 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a001e
 			public const int multiply = 2131361822;
 			
+			// aapt resource value: 0x7f0a00a0
+			public const int nav_SearchApartment = 2131361952;
+			
 			// aapt resource value: 0x7f0a009f
-			public const int nav_SearchApartment = 2131361951;
-			
-			// aapt resource value: 0x7f0a009e
-			public const int nav_friends = 2131361950;
-			
-			// aapt resource value: 0x7f0a009c
-			public const int nav_home = 2131361948;
+			public const int nav_friends = 2131361951;
 			
 			// aapt resource value: 0x7f0a009d
-			public const int nav_messages = 2131361949;
+			public const int nav_home = 2131361949;
+			
+			// aapt resource value: 0x7f0a009e
+			public const int nav_messages = 2131361950;
 			
 			// aapt resource value: 0x7f0a008a
 			public const int nav_view = 2131361930;
@@ -2641,8 +2641,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0039
 			public const int start = 2131361849;
 			
-			// aapt resource value: 0x7f0a0099
-			public const int startprogressbar = 2131361945;
+			// aapt resource value: 0x7f0a009a
+			public const int startprogressbar = 2131361946;
 			
 			// aapt resource value: 0x7f0a008e
 			public const int status_bar_latest_event_content = 2131361934;
@@ -2685,6 +2685,9 @@ namespace HFNotification
 			
 			// aapt resource value: 0x7f0a0075
 			public const int touch_outside = 2131361909;
+			
+			// aapt resource value: 0x7f0a0099
+			public const int txtMessage = 2131361945;
 			
 			// aapt resource value: 0x7f0a0081
 			public const int txtemail = 2131361921;
@@ -2920,19 +2923,22 @@ namespace HFNotification
 			public const int notification_template_part_time = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int select_dialog_item_material = 2130968628;
+			public const int rowlayout = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int select_dialog_multichoice_material = 2130968629;
+			public const int select_dialog_item_material = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int select_dialog_singlechoice_material = 2130968630;
+			public const int select_dialog_multichoice_material = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int StartUp = 2130968631;
+			public const int select_dialog_singlechoice_material = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int support_simple_spinner_dropdown_item = 2130968632;
+			public const int StartUp = 2130968632;
+			
+			// aapt resource value: 0x7f040039
+			public const int support_simple_spinner_dropdown_item = 2130968633;
 			
 			static Layout()
 			{

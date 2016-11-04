@@ -26,13 +26,15 @@ namespace HFNotification
 			myListView = view.FindViewById<ListView>(Resource.Id.lvNotifications);
 			//string[] items = new string[] { "https://www.xamarin.com/", "https://github.com/", "https://firebase.google.com/docs/cloud-messaging/", "https://tortoisegit.org/", "Bulbs", "Tubers", "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers3" };
 			//string[] items =StoringService.Messages.ToArray();
-			myListView.Adapter = new ArrayAdapter<Message>(view.Context, Android.Resource.Layout.SimpleDropDownItem1Line, StoringService.Messages);
+			//myListView.Adapter = new ArrayAdapter<Message>(view.Context, Android.Resource.Layout.SimpleDropDownItem1Line, StoringService.Messages);
+			myListView.Adapter = new MessageListAdapter(view.Context,StoringService.Messages);
 			myListView.ItemClick += (sender, e) =>
 			{
-				var url = myListView.GetItemAtPosition(e.Position).ToString();
+				var url = StoringService.Messages[e.Position].NotificationUrl;
+				StoringService.Messages[e.Position].Checked = true;
 				var uri = Android.Net.Uri.Parse(url);
 				var intent = new Intent(Intent.ActionView, uri);
-				myListView.GetChildAt(e.Position).SetBackgroundColor(Android.Graphics.Color.White);
+				//myListView.GetChildAt(e.Position).SetBackgroundColor(Android.Graphics.Color.White);
 				StartActivity(intent);
 			};
 			
