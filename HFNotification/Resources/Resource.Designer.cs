@@ -2191,22 +2191,19 @@ namespace HFNotification
 			public const int ic_action_attach = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int ic_action_refresh = 2130837633;
+			public const int ic_home_black_24dp = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int ic_home_black_24dp = 2130837634;
+			public const int Icon = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int Icon = 2130837635;
-			
-			// aapt resource value: 0x7f020084
-			public const int navigation_empty_icon = 2130837636;
-			
-			// aapt resource value: 0x7f020086
-			public const int notification_template_icon_bg = 2130837638;
+			public const int navigation_empty_icon = 2130837635;
 			
 			// aapt resource value: 0x7f020085
-			public const int startprogressbar = 2130837637;
+			public const int notification_template_icon_bg = 2130837637;
+			
+			// aapt resource value: 0x7f020084
+			public const int startprogressbar = 2130837636;
 			
 			static Drawable()
 			{

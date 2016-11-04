@@ -72,7 +72,7 @@ namespace HFNotification
 		{
 			PackageManager manager = this.PackageManager;
 			PackageInfo info = manager.GetPackageInfo(this.PackageName, 0);
-			string version = info.VersionName;
+			string version = ApplicationInfo.LoadLabel(PackageManager) + "\n" + info.VersionName;
 
 			switch (e.MenuItem.ItemId)
 			{

@@ -211,9 +211,6 @@
     <AndroidResource Include="Resources\drawable\ic_action_attach.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_action_refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_home_black_24dp.png" />
   </ItemGroup>
   <ItemGroup>
