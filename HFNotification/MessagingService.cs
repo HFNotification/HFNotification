@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Media;
 //using Android.Support.V7.App;
 using Firebase.Messaging;
+using System;
 
 namespace HFNotification
 {
@@ -12,15 +13,16 @@ namespace HFNotification
 	{
 		const string TAG = "MsgService";
 
-		public override void OnMessageReceived(RemoteMessage message)
+		public override void OnMessageReceived(RemoteMessage firebasemessage)
 		{
 			// TODO: Handle FCM messages here
 			StoringService.LoadMessages();
-			StoringService.Messages.Add(message.Data["url"]);
+			Message message = new Message(firebasemessage.Data["NotificationUrl"], firebasemessage.Data["AlertType"], DateTime.Parse(firebasemessage.Data["CreatedDate"]));
+			StoringService.Messages.Add(message);
 			StoringService.SaveMessages();
-			SendNotification(message.Data["url"]);
+			SendNotification(message);
 		}
-		void SendNotification(string messageBody)
+		void SendNotification(Message message)
 		{
 			var intent = new Intent(this, typeof(MainActivity));
 			intent.AddFlags(ActivityFlags.ClearTop);
@@ -29,8 +31,8 @@ namespace HFNotification
 			var defaultSoundUri = RingtoneManager.GetDefaultUri(RingtoneType.Notification);
 			var notificationBuilder = new Android.Support.V4.App.NotificationCompat.Builder(this)
 				.SetSmallIcon(Resource.Drawable.Icon)
-				.SetContentTitle("Hey ho")
-				.SetContentText(messageBody)
+				.SetContentTitle(message.AlertType)
+				.SetContentText(message.CreatedDate.ToString())
 				.SetAutoCancel(true)
 				.SetSound(defaultSoundUri)
 				.SetContentIntent(pendingIntent);

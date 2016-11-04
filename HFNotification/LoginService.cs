@@ -14,12 +14,12 @@ namespace HFNotification
 			if (NewCredentials(email,password,token))
 			{
 				ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
-				ISharedPreferencesEditor editor = preferences.Edit().Clear();
-				editor.PutString("email", email);
-				editor.PutString("password", password);
-				editor.PutString("token", token);
-				editor.PutBoolean("loged", true);
-				editor.Apply();
+				ISharedPreferencesEditor editor = preferences.Edit();
+				editor.PutString("email", email)
+					.PutString("password", password)
+					.PutString("token", token)
+					.PutBoolean("loged", true)
+					.Apply();
 				return true;
 			}
 			return false;
@@ -40,22 +40,17 @@ namespace HFNotification
 
 		static private bool NewCredentials(string email, string password, string token)
 		{
-			var data = "email=" + email;
-			data += "&password=" + password;
-			data += "&token=" + token;
+			string data = string.Format("email={0}&password={1}&token={2}",email, password, token);
 			return SendRequest(data);
 		}
 		static public bool UpdateCredentials(string email, string password, string newtoken, string oldtoken)
 		{
-			var data = "email=" + email;
-			data += "&password=" + password;
-			data += "&newtoken=" + newtoken;
-			data += "&oldtoken=" + oldtoken;
+			string data = string.Format("email={0}&password={1}&newtoken={2}&oldtoken={3}", email, password, newtoken, oldtoken);
 			return SendRequest(data);
 		}
 		static private bool SendRequest(string data)
 		{
-			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/pk05y2pk");
+			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/1noc5vo1");
 			httpWebRequest.ContentType = "application/x-www-form-urlencoded";
 			httpWebRequest.Method = "POST";
 			//WebUtility.UrlEncode(data);
@@ -76,6 +71,13 @@ namespace HFNotification
 				return true;
 			
 		}
-		//TODO Logout method
+		static public bool Logout()
+		{
+			ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+			ISharedPreferencesEditor editor = preferences.Edit();
+			editor.PutBoolean("loged", false);
+			editor.Apply();
+			return true;
+		}
 	}
 }

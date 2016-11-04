@@ -133,6 +133,7 @@
     <Compile Include="LoginActivity.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="MessagingService.cs" />
     <Compile Include="RequestResult.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
