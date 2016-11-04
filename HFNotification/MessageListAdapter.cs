@@ -44,7 +44,7 @@ namespace HFNotification
 				view = LayoutInflater.From(Context).Inflate(Resource.Layout.rowlayout,null);
 			}
 			CheckedTextView messageview = view.FindViewById<CheckedTextView>(Resource.Id.txtMessage);
-			messageview.Text = string.Format("{0} at {1}",Items[position].AlertType,Items[position].CreatedDate);
+			messageview.Text = string.Format(Items[position].AlertType+"\n"+Items[position].CreatedDate);
 			messageview.Checked = Items[position].Checked;
 			return view;
 		}

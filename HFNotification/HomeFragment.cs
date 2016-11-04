@@ -30,12 +30,26 @@ namespace HFNotification
 			myListView.Adapter = new MessageListAdapter(view.Context,StoringService.Messages);
 			myListView.ItemClick += (sender, e) =>
 			{
-				var url = StoringService.Messages[e.Position].NotificationUrl;
-				StoringService.Messages[e.Position].Checked = true;
-				var uri = Android.Net.Uri.Parse(url);
-				var intent = new Intent(Intent.ActionView, uri);
-				//myListView.GetChildAt(e.Position).SetBackgroundColor(Android.Graphics.Color.White);
-				StartActivity(intent);
+				try
+				{
+					var url = StoringService.Messages[e.Position].NotificationUrl;
+					StoringService.Messages[e.Position].Checked = true;
+					var uri = Android.Net.Uri.Parse(url);
+					var intent = new Intent(Intent.ActionView, uri);
+					StartActivity(intent);
+				}
+				catch
+				{
+					AlertDialog.Builder alert = new AlertDialog.Builder(view.Context);
+					alert.SetTitle("Error :");
+					alert.SetMessage("This message is not a url.");
+					alert.SetPositiveButton("Close", (senderAlert, args) =>
+					{
+						Toast.MakeText(view.Context, "Closed!", ToastLength.Short).Show();
+					});
+					Dialog dialog = alert.Create();
+					dialog.Show();
+				}
 			};
 			
 			return view;
