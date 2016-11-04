@@ -1,5 +1,4 @@
-﻿using System.Net.Mail;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -38,14 +37,12 @@ namespace HFNotification
 			// Attach item selected handler to navigation view
 			var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
 			navigationView.NavigationItemSelected += NavigationView_NavigationItemSelected;
-
-			
+			// Add username to menu
 			var headerView = navigationView.GetHeaderView(0);
 			tvUserName = headerView.FindViewById<TextView>(Resource.Id.userName);
+			// Get userName from email
 			ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
 			string email = preferences.GetString("email", "User@gmail.com");
-
-			//var email = "User@gmail.com";
 			string name = email.Split('@')[0];
 			tvUserName.Text = name;
 
@@ -118,8 +115,8 @@ namespace HFNotification
 					//this.Activity.Finish();
 					return true;
 				//case Resource.Id.action_attach:
-					//FnAttachImage();
-					//return true;
+				//FnAttachImage();
+				//return true;
 				default:
 					return base.OnOptionsItemSelected(item);
 			}
@@ -133,7 +130,7 @@ namespace HFNotification
 			}
 			else
 			{
-					Finish();
+				Finish();
 				//	base.OnBackPressed();
 			}
 		}
