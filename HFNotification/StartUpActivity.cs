@@ -2,8 +2,10 @@ using Android.App;
 using Android.Gms.Common;
 using Android.Net;
 using Android.OS;
+using Android.Views;
 using Android.Widget;
 using System.Net;
+using System.Threading.Tasks;
 
 
 namespace HFNotification
@@ -12,47 +14,73 @@ namespace HFNotification
 	public class StartUpActivity : Activity
 	{
 		//const string TAG = "MainActivity";
-		TextView msgText;
+		private TextView msgText;
+		private Button tryButton;
+		private ProgressBar startProgressBar;
+		const int trycount = 5;
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.StartUp);
-			//Check if Internet is available
-			if (isOnline())
+			msgText = FindViewById<TextView>(Resource.Id.msgText);
+			tryButton = FindViewById<Button>(Resource.Id.tryAgainButton);
+			startProgressBar = FindViewById<ProgressBar>(Resource.Id.startProgressBar);
+			//Check if Internet is available 
+
+			TryConnection();
+			startProgressBar.Visibility = ViewStates.Gone;
+			tryButton.Visibility = ViewStates.Visible;
+			tryButton.Click += async delegate {
+				tryButton.Visibility = ViewStates.Gone;
+				startProgressBar.Visibility = ViewStates.Visible;
+				await Task.Factory.StartNew(() => {
+
+					TryConnection();
+					RunOnUiThread(() => startProgressBar.Visibility = ViewStates.Gone);
+					RunOnUiThread(() => tryButton.Visibility = ViewStates.Visible);
+				});
+			};
+		}
+
+
+		public void TryConnection()
+		{
+			for (int tryconnection = 1; tryconnection <= trycount; tryconnection++)
 			{
-				//Test if GPS is available
-				msgText = FindViewById<TextView>(Resource.Id.msgText);
-				if (IsPlayServicesAvailable())
+				if (IsOnline())
 				{
-					try
+					if (IsPlayServicesAvailable())
 					{
-						if (!LoginService.Login())
+						try
 						{
-							StartActivity(typeof(LoginActivity));
-							Finish();
+							if (!LoginService.Login())
+							{
+								StartActivity(typeof(LoginActivity));
+								Finish();
+							}
+							else
+							{
+								StartActivity(typeof(MainActivity));
+								Finish();
+							}
 						}
-						else
+						catch (WebException)
 						{
-							StartActivity(typeof(MainActivity));
-							Finish();
+							RunOnUiThread(() => msgText.Text = "Loginization failed!");
 						}
-					}
-					catch (WebException)
-					{
-						//TODO show message Couldnt not connect ot server
 					}
 				}
-			}
-			else
-			{
-				// code
-				//MessageBox.Show("Internet connections are not available");
-				Toast.MakeText(this, "Internet connections are not available", ToastLength.Long).Show();
+				else
+				{
+					RunOnUiThread(() => msgText.Text = "No internet connection!");
+				}
+				System.Threading.Thread.Sleep(500);
 			}
 		}
+
 		//Check if Internet is available
-		public bool isOnline()
+		public bool IsOnline()
 		{
 			ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
 			NetworkInfo activeConnection = connectivityManager.ActiveNetworkInfo;
@@ -67,14 +95,14 @@ namespace HFNotification
 					msgText.Text = GoogleApiAvailability.Instance.GetErrorString(resultCode);
 				else
 				{
-					msgText.Text = "Sorry, this device is not supported";
+					RunOnUiThread(() => msgText.Text = "Sorry, this device is not supported :(");
 					Finish();
 				}
 				return false;
 			}
 			else
 			{
-				msgText.Text = "Google Play Services is available.";
+				RunOnUiThread(() => msgText.Text = "GooglePlay services currently available");
 				return true;
 			}
 		}

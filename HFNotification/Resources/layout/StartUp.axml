@@ -4,19 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp">
-    <TextView
-        android:text=" "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/msgText"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:padding="10dp" />
-    <ProgressBar
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:indeterminateDrawable="@drawable/startprogressbar"
-        android:indeterminateOnly="true"
-        android:id="@+id/startprogressbar"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+  <TextView
+      android:text=" "
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/msgText"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:padding="10dp" />
+  <ProgressBar
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:indeterminateDrawable="@drawable/startprogressbar"
+      android:indeterminateOnly="true"
+      android:id="@+id/startProgressBar"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true" />
+  <Button
+      android:text="Try again"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:visibility="gone"
+      android:id="@+id/tryAgainButton" />
 </RelativeLayout>
