@@ -50,7 +50,7 @@ namespace HFNotification
 		}
 		static private bool SendRequest(string data)
 		{
-			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/1noc5vo1");
+			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/11tbsdm1");
 			httpWebRequest.ContentType = "application/x-www-form-urlencoded";
 			httpWebRequest.Method = "POST";
 			//WebUtility.UrlEncode(data);

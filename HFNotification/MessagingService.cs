@@ -16,10 +16,10 @@ namespace HFNotification
 		public override void OnMessageReceived(RemoteMessage firebasemessage)
 		{
 			// TODO: Handle FCM messages here
-			StoringService.LoadMessages();
+			//StoringService.LoadMessages();
 			Message message = new Message(firebasemessage.Data["NotificationUrl"], firebasemessage.Data["AlertType"], DateTime.Parse(firebasemessage.Data["CreatedDate"]));
 			StoringService.Messages.Add(message);
-			StoringService.SaveMessages();
+			//StoringService.SaveMessages();
 			SendNotification(message);
 		}
 		void SendNotification(Message message)

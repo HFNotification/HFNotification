@@ -22,6 +22,7 @@ namespace HFNotification
 		}
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
+			StoringService.LoadMessages();
 			View view = inflater.Inflate(Resource.Layout.homeLayout, container, false);
 			myListView = view.FindViewById<ListView>(Resource.Id.lvNotifications);
 			//string[] items = new string[] { "https://www.xamarin.com/", "https://github.com/", "https://firebase.google.com/docs/cloud-messaging/", "https://tortoisegit.org/", "Bulbs", "Tubers", "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers", "Vegetables", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers3" };
@@ -51,8 +52,17 @@ namespace HFNotification
 					dialog.Show();
 				}
 			};
-			
 			return view;
+		}
+		public override void OnResume()
+		{
+			base.OnResume();
+			//StoringService.LoadMessages();
+		}
+		public override void OnPause()
+		{
+			base.OnPause();
+			StoringService.SaveMessages();
 		}
 	}
 }
