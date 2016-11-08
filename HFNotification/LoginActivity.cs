@@ -15,26 +15,26 @@ namespace HFNotification
 			base.OnCreate(savedInstanceState);
 
 			SetContentView(Resource.Layout.Login);
-			Button btnLogin= FindViewById<Button>(Resource.Id.loginbutton);
-			EditText txtEmail = FindViewById<EditText>(Resource.Id.email);
-			EditText txtPassword = FindViewById<EditText>(Resource.Id.password);
-			TextView txtError = FindViewById<TextView>(Resource.Id.txterror);
+			Button btnLogin= FindViewById<Button>(Resource.Id.btnLogin);
+			EditText etxtEmail = FindViewById<EditText>(Resource.Id.etxtEmail);
+			EditText etxtPassword = FindViewById<EditText>(Resource.Id.etxtPassword);
+			TextView txtError = FindViewById<TextView>(Resource.Id.txtError);
 			btnLogin.Click += delegate {
 				try
 				{
-					if (LoginService.Login(txtEmail.Text, txtPassword.Text, FirebaseInstanceId.Instance.Token))
+					if (LoginService.Login(etxtEmail.Text, etxtPassword.Text, FirebaseInstanceId.Instance.Token))
 					{
 						StartActivity(typeof(MainActivity));
 						Finish();
 					}
 					else
 					{
-						txtError.Text = "Login or password is incorrect";
+						txtError.Text = GetString(Resource.String.wrong_password);
 					}
 				}
 				catch (WebException)
 				{
-					txtError.Text = "Could not resolve connection to server";
+					txtError.Text = GetString(Resource.String.wrong_url);
 				}
 			};
 		}

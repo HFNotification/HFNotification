@@ -3,6 +3,7 @@ using System.IO;
 using Android.Content;
 using Android.Preferences;
 using Android.App;
+using Newtonsoft.Json;
 
 namespace HFNotification
 {
@@ -61,14 +62,14 @@ namespace HFNotification
 				streamWriter.Flush();
 			}
 			var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-			string result;
+			string resultstring;
 			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
 			{
-				 result = streamReader.ReadToEnd();
+				resultstring = streamReader.ReadToEnd();
 			}
-
-				//TODO: parse resulting json
-				return true;
+			//RequestResult result = JsonConvert.DeserializeObject<RequestResult>(resultstring);
+			//return result.Result;
+			return true;
 			
 		}
 		static public bool Logout()

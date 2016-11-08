@@ -40,11 +40,11 @@ namespace HFNotification
 			View view = convertView;
 			if (view == null)
 			{
-				view = LayoutInflater.From(Context).Inflate(Resource.Layout.rowlayout,null);
+				view = LayoutInflater.From(Context).Inflate(Resource.Layout.Rowlayout,null);
 			}
-			TextView messageview = view.FindViewById<TextView>(Resource.Id.textView1);
+			TextView messageview = view.FindViewById<TextView>(Resource.Id.txtMessage);
 			messageview.Text = string.Format(Items[position].AlertType+"\n"+Items[position].CreatedDate);
-			CheckBox messageviewcheck = view.FindViewById<CheckBox>(Resource.Id.checkBox1);
+			CheckBox messageviewcheck = view.FindViewById<CheckBox>(Resource.Id.chkMessage);
 			messageviewcheck.Checked= Items[position].Checked;
 			return view;
 		}

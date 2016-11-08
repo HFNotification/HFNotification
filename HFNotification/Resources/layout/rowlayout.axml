@@ -11,7 +11,7 @@
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
         p1:layout_weight="95"
-        p1:id="@+id/textView1" />
+        p1:id="@+id/txtMessage" />
     <CheckBox
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
@@ -19,5 +19,5 @@
         p1:focusable="false"
         p1:clickable="false"
         p1:focusableInTouchMode="false"
-        p1:id="@+id/checkBox1" />
+        p1:id="@+id/chkMessage" />
 </LinearLayout>

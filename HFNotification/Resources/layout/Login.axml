@@ -10,34 +10,34 @@
         p1:textAppearance="?android:attr/textAppearanceMedium"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/txtemail" />
+        p1:id="@+id/txtEmail" />
     <EditText
         p1:inputType="textEmailAddress"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/email" />
+        p1:id="@+id/etxtEmail" />
     <TextView
         p1:text="Password"
         p1:textAppearance="?android:attr/textAppearanceMedium"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/txtpassword"
+        p1:id="@+id/txtPassword"
         p1:textAlignment="center" />
     <EditText
         p1:inputType="textPassword"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/password" />
+        p1:id="@+id/etxtPassword" />
     <Button
         p1:text="Login"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/loginbutton" />
+        p1:id="@+id/btnLogin" />
     <TextView
         p1:textAppearance="?android:attr/textAppearanceSmall"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/txterror"
+        p1:id="@+id/txtError"
         p1:layout_marginBottom="22.5dp"
         p1:gravity="center"
         p1:textColor="@android:color/holo_red_light" />

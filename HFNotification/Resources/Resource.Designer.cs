@@ -2299,6 +2299,9 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a002c
 			public const int bottom = 2131361836;
 			
+			// aapt resource value: 0x7f0a0086
+			public const int btnLogin = 2131361926;
+			
 			// aapt resource value: 0x7f0a004e
 			public const int buttonPanel = 2131361870;
 			
@@ -2314,11 +2317,11 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0035
 			public const int center_vertical = 2131361845;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int checkBox1 = 2131361947;
-			
 			// aapt resource value: 0x7f0a005c
 			public const int checkbox = 2131361884;
+			
+			// aapt resource value: 0x7f0a009b
+			public const int chkMessage = 2131361947;
 			
 			// aapt resource value: 0x7f0a0094
 			public const int chronometer = 2131361940;
@@ -2374,9 +2377,6 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0067
 			public const int edit_query = 2131361895;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int email = 2131361923;
-			
 			// aapt resource value: 0x7f0a0025
 			public const int end = 2131361829;
 			
@@ -2388,6 +2388,12 @@ namespace HFNotification
 			
 			// aapt resource value: 0x7f0a002f
 			public const int enterAlwaysCollapsed = 2131361839;
+			
+			// aapt resource value: 0x7f0a0083
+			public const int etxtEmail = 2131361923;
+			
+			// aapt resource value: 0x7f0a0085
+			public const int etxtPassword = 2131361925;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int exitUntilCollapsed = 2131361840;
@@ -2458,9 +2464,6 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a004b
 			public const int list_item = 2131361867;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int loginbutton = 2131361926;
-			
 			// aapt resource value: 0x7f0a0080
 			public const int lvNotifications = 2131361920;
 			
@@ -2511,9 +2514,6 @@ namespace HFNotification
 			
 			// aapt resource value: 0x7f0a0050
 			public const int parentPanel = 2131361872;
-			
-			// aapt resource value: 0x7f0a0085
-			public const int password = 2131361925;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int pin = 2131361851;
@@ -2647,9 +2647,6 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0057
 			public const int textSpacerNoButtons = 2131361879;
 			
-			// aapt resource value: 0x7f0a009a
-			public const int textView1 = 2131361946;
-			
 			// aapt resource value: 0x7f0a007e
 			public const int text_input_password_toggle = 2131361918;
 			
@@ -2675,13 +2672,16 @@ namespace HFNotification
 			public const int tryAgainButton = 2131361949;
 			
 			// aapt resource value: 0x7f0a0082
-			public const int txtemail = 2131361922;
+			public const int txtEmail = 2131361922;
 			
 			// aapt resource value: 0x7f0a0087
-			public const int txterror = 2131361927;
+			public const int txtError = 2131361927;
+			
+			// aapt resource value: 0x7f0a009a
+			public const int txtMessage = 2131361946;
 			
 			// aapt resource value: 0x7f0a0084
-			public const int txtpassword = 2131361924;
+			public const int txtPassword = 2131361924;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int up = 2131361801;
@@ -2911,7 +2911,7 @@ namespace HFNotification
 			public const int notification_template_part_time = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int rowlayout = 2130968628;
+			public const int Rowlayout = 2130968628;
 			
 			// aapt resource value: 0x7f040035
 			public const int select_dialog_item_material = 2130968629;
@@ -3179,6 +3179,12 @@ namespace HFNotification
 			
 			// aapt resource value: 0x7f070041
 			public const int strBottomLine = 2131165249;
+			
+			// aapt resource value: 0x7f070044
+			public const int wrong_password = 2131165252;
+			
+			// aapt resource value: 0x7f070045
+			public const int wrong_url = 2131165253;
 			
 			static String()
 			{
