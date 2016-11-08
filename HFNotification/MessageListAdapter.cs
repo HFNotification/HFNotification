@@ -18,7 +18,7 @@ namespace HFNotification
 		{
 			get
 			{
-				return Items[position];
+				return Items[Count-position-1];
 			}
 		}
 
@@ -32,7 +32,7 @@ namespace HFNotification
 
 		public override long GetItemId(int position)
 		{
-			return position;
+			return Count - position - 1;
 		}
 
 		public override View GetView(int position, View convertView, ViewGroup parent)
@@ -43,9 +43,9 @@ namespace HFNotification
 				view = LayoutInflater.From(Context).Inflate(Resource.Layout.Rowlayout,null);
 			}
 			TextView messageview = view.FindViewById<TextView>(Resource.Id.txtMessage);
-			messageview.Text = string.Format(Items[position].AlertType+"\n"+Items[position].CreatedDate);
+			messageview.Text = string.Format(Items[Count - position - 1].AlertType+"\n"+Items[Count - position - 1].CreatedDate);
 			CheckBox messageviewcheck = view.FindViewById<CheckBox>(Resource.Id.chkMessage);
-			messageviewcheck.Checked= Items[position].Checked;
+			messageviewcheck.Checked= Items[Count - position - 1].Checked;
 			return view;
 		}
 		public void Update(List<Message> newitems)

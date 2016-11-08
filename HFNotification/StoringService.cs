@@ -27,7 +27,7 @@ namespace HFNotification
 				using (var streamReader = new StreamReader(GetStorage()))
 				{
 					string jsonMessages = streamReader.ReadToEnd();
-					Messages = JsonConvert.DeserializeObject<List< Message>> (jsonMessages);
+					Messages = JsonConvert.DeserializeObject<List<Message>> (jsonMessages);
 				}
 			}
 			

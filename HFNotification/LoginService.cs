@@ -42,16 +42,16 @@ namespace HFNotification
 		static private bool NewCredentials(string email, string password, string token)
 		{
 			string data = string.Format("email={0}&password={1}&token={2}",email, password, token);
-			return SendRequest(data);
+			return SendRequest(data, "http://requestb.in/12dmtqp1");
 		}
 		static public bool UpdateCredentials(string email, string password, string newtoken, string oldtoken)
 		{
 			string data = string.Format("email={0}&password={1}&newtoken={2}&oldtoken={3}", email, password, newtoken, oldtoken);
-			return SendRequest(data);
+			return SendRequest(data, "http://requestb.in/12dmtqp1");
 		}
-		static private bool SendRequest(string data)
+		static private bool SendRequest(string data,string url)
 		{
-			var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://requestb.in/12dmtqp1");
+			var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
 			httpWebRequest.ContentType = "application/x-www-form-urlencoded";
 			httpWebRequest.Method = "POST";
 			//WebUtility.UrlEncode(data);

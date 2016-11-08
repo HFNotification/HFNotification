@@ -3,6 +3,8 @@ using Firebase.Iid;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
+using Android.Preferences;
+using Android.Content;
 
 namespace HFNotification
 {
@@ -27,7 +29,11 @@ namespace HFNotification
 
 		void SendRegistrationToServer(string token)
 		{
-			//TODO: Refresh token on server side.
+			ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+			if(preferences.GetString("token","notoken")!="notoken")
+			{
+				LoginService.UpdateCredentials(preferences.GetString("email", "nomail"), preferences.GetString("password", "nopassword"), FirebaseInstanceId.Instance.Token, preferences.GetString("token", "notoken"));
+			}
 		}
 	}
 }
