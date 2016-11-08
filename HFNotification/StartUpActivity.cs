@@ -26,6 +26,7 @@ namespace HFNotification
 			msgText = FindViewById<TextView>(Resource.Id.msgText);
 			tryButton = FindViewById<Button>(Resource.Id.tryAgainButton);
 			startProgressBar = FindViewById<ProgressBar>(Resource.Id.startProgressBar);
+			tryButton.Text = GetString(Resource.String.tryButtonText);
 			//Check if Internet is available 
 
 			TryConnection();

@@ -8,5 +8,6 @@
   <string name="close_drawer">Close drawer</string>
   <string name="close_drawer">Close drawer</string>
   <string name="wrong_password">Login or password is incorrect</string>
-  <string name="wrong_url">Could not resolve connection to server</string> 
+  <string name="wrong_url">Could not resolve connection to server</string>
+  <string name="tryButtonText">Try again</string>
 </resources>

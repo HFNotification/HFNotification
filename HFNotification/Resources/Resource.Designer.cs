@@ -3180,6 +3180,9 @@ namespace HFNotification
 			// aapt resource value: 0x7f070041
 			public const int strBottomLine = 2131165249;
 			
+			// aapt resource value: 0x7f070046
+			public const int tryButtonText = 2131165254;
+			
 			// aapt resource value: 0x7f070044
 			public const int wrong_password = 2131165252;
 			
