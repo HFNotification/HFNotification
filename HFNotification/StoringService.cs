@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
-using System.Collections.ObjectModel;
 
 namespace HFNotification
 {
@@ -10,9 +9,9 @@ namespace HFNotification
 	{
 		static StoringService()
 		{
-			Messages = new ObservableCollection<Message>();
+			Messages = new List<Message>();
 		}
-		public static ObservableCollection<Message> Messages {get;private set; }
+		public static List<Message> Messages {get;private set; }
 		public static void SaveMessages()
 		{
 			var jsonMessages = JsonConvert.SerializeObject(Messages);
@@ -28,7 +27,7 @@ namespace HFNotification
 				using (var streamReader = new StreamReader(GetStorage()))
 				{
 					string jsonMessages = streamReader.ReadToEnd();
-					Messages = JsonConvert.DeserializeObject<ObservableCollection<Message>>(jsonMessages);
+					Messages = JsonConvert.DeserializeObject<List< Message>> (jsonMessages);
 				}
 			}
 			

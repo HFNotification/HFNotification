@@ -1,16 +1,15 @@
-using System;
 using Android.Views;
 using Android.Widget;
 using Android.Content;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace HFNotification
 {
 	public class MessageListAdapter : BaseAdapter<Message>
 	{
-		public ObservableCollection<Message> Items { get; set; }
+		public List<Message> Items { get; set; }
 		public Context Context { get; set; }
-		public MessageListAdapter(Context context, ObservableCollection<Message> items) : base()
+		public MessageListAdapter(Context context, List<Message> items) : base()
 		{
 			Items = items;
 			Context = context;
@@ -48,6 +47,12 @@ namespace HFNotification
 			CheckBox messageviewcheck = view.FindViewById<CheckBox>(Resource.Id.checkBox1);
 			messageviewcheck.Checked= Items[position].Checked;
 			return view;
+		}
+		public void Update(List<Message> newitems)
+		{
+			Items.Clear();
+			Items.AddRange(newitems);
+			NotifyDataSetChanged();
 		}
 	}
 }
