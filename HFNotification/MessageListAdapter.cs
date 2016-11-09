@@ -43,7 +43,7 @@ namespace HFNotification
 				view = LayoutInflater.From(Context).Inflate(Resource.Layout.Rowlayout,null);
 			}
 			TextView messageview = view.FindViewById<TextView>(Resource.Id.txtMessage);
-			messageview.Text = string.Format(Items[Count - position - 1].AlertType+Items[Count - position - 1].CreatedDate);
+			messageview.Text = string.Format(Items[Count - position - 1].AlertType);
 			TextView timeview = view.FindViewById<TextView>(Resource.Id.txtTime);
 			timeview.Text = string.Format(Items[Count - position - 1].CreatedDate.ToString());
 			CheckBox messageviewcheck = view.FindViewById<CheckBox>(Resource.Id.chkMessage);
