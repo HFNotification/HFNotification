@@ -9,10 +9,33 @@ namespace HFNotification
 {
 	static public class LoginService
 	{
+		static public string Token
+		{
+			get
+			{
+				ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+				return (preferences.GetString("token", "notoken"));
+			}
+		}
+		static public string UserName
+		{
+			get
+			{
+				ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+				return (preferences.GetString("login", "nologin"));
+			}
+		}
+		static public bool LoginStatus
+		{
+			get
+			{
+				ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+				return (preferences.GetBoolean("loged", false));
+			}
+		}
 		static public bool Login(string email, string password, string token)
 		{
-			//Login using user inputed credentials
-			if (NewCredentials(email,password,token))
+			if (NewCredentials(email, password, token))
 			{
 				ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
 				ISharedPreferencesEditor editor = preferences.Edit();
@@ -29,9 +52,9 @@ namespace HFNotification
 		{
 			//Login using local stored credentials
 			ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
-			if (preferences.GetBoolean("loged",false))
+			if (preferences.GetBoolean("loged", false))
 			{
-				if(NewCredentials(preferences.GetString("email", "nomail"), preferences.GetString("password", "nopassword"), preferences.GetString("token", "notoken")))
+				if (NewCredentials(preferences.GetString("email", "nomail"), preferences.GetString("password", "nopassword"), preferences.GetString("token", "notoken")))
 				{
 					return true;
 				}
@@ -41,15 +64,15 @@ namespace HFNotification
 
 		static private bool NewCredentials(string email, string password, string token)
 		{
-			string data = string.Format("email={0}&password={1}&token={2}",email, password, token);
-			return SendRequest(data, "http://requestb.in/12dmtqp1");
+			string data = string.Format("email={0}&password={1}&token={2}", email, password, token);
+			return SendRequest(data, Constants.NEWCREDSURL);
 		}
 		static public bool UpdateCredentials(string email, string password, string newtoken, string oldtoken)
 		{
 			string data = string.Format("email={0}&password={1}&newtoken={2}&oldtoken={3}", email, password, newtoken, oldtoken);
-			return SendRequest(data, "http://requestb.in/12dmtqp1");
+			return SendRequest(data, Constants.UPDATECREDSURL);
 		}
-		static private bool SendRequest(string data,string url)
+		static private bool SendRequest(string data, string url)
 		{
 			var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
 			httpWebRequest.ContentType = "application/x-www-form-urlencoded";
@@ -70,7 +93,7 @@ namespace HFNotification
 			//RequestResult result = JsonConvert.DeserializeObject<RequestResult>(resultstring);
 			//return result.Result;
 			return true;
-			
+
 		}
 		static public bool Logout()
 		{

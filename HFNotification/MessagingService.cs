@@ -15,18 +15,20 @@ namespace HFNotification
 
 		public override void OnMessageReceived(RemoteMessage firebasemessage)
 		{
-			// TODO: Handle FCM messages here
 			//StoringService.LoadMessages();
-			Message message = new Message(firebasemessage.Data["NotificationUrl"], firebasemessage.Data["AlertType"], DateTime.Parse(firebasemessage.Data["CreatedDate"]));
-			StoringService.Messages.Add(message);
-			StoringService.SaveMessages();
-			SendNotification(message);
+			if (LoginService.LoginStatus)
+			{
+				Message message = new Message(firebasemessage.Data["NotificationUrl"], firebasemessage.Data["AlertType"], DateTime.Parse(firebasemessage.Data["CreatedDate"]));
+				StoringService.AddMessage(message);
+				StoringService.SaveMessages();
+				SendNotification(message);
+			}
 		}
 		void SendNotification(Message message)
 		{
-			var intent = new Intent(this, typeof(MainActivity));
+			Intent intent = new Intent(this, typeof(MainActivity));
 			intent.AddFlags(ActivityFlags.ClearTop);
-			var pendingIntent = PendingIntent.GetActivity(this, 0 /* Request code */, intent, PendingIntentFlags.OneShot);
+			PendingIntent pendingIntent = PendingIntent.GetActivity(this, 0 /* Request code */, intent, PendingIntentFlags.OneShot);
 
 			var defaultSoundUri = RingtoneManager.GetDefaultUri(RingtoneType.Notification);
 			var notificationBuilder = new Android.Support.V4.App.NotificationCompat.Builder(this)

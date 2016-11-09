@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
-    p1:orientation="horizontal"
-    p1:layout_width="match_parent"
-    p1:layout_height="wrap_content"
-    p1:id="@+id/linearLayout1"
-    p1:descendantFocusability="blocksDescendants"
-    p1:weightSum="100">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayout1"
+    android:descendantFocusability="blocksDescendants"
+    android:weightSum="100">
     <TextView
-        p1:textAppearance="?android:attr/textAppearanceLarge"
-        p1:layout_width="wrap_content"
-        p1:layout_height="match_parent"
-        p1:layout_weight="95"
-        p1:id="@+id/txtMessage" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="95"
+        android:id="@+id/txtMessage" />
     <CheckBox
-        p1:layout_width="wrap_content"
-        p1:layout_height="match_parent"
-        p1:layout_weight="5"
-        p1:focusable="false"
-        p1:clickable="false"
-        p1:focusableInTouchMode="false"
-        p1:id="@+id/chkMessage" />
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:focusable="false"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:id="@+id/chkMessage" />
 </LinearLayout>

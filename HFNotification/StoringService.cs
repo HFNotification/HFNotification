@@ -11,10 +11,18 @@ namespace HFNotification
 		{
 			Messages = new List<Message>();
 		}
-		public static List<Message> Messages {get;private set; }
+		public static List<Message> Messages { get; private set; }
+		public static void AddMessage(Message message)
+		{
+			if (Messages.Count > Constants.MESSAGESCOUNT)
+			{
+				Messages.RemoveRange(0, Messages.Count - Constants.MESSAGESCOUNT);
+			}
+			Messages.Add(message);
+		}
 		public static void SaveMessages()
 		{
-			var jsonMessages = JsonConvert.SerializeObject(Messages);
+			string jsonMessages = JsonConvert.SerializeObject(Messages);
 			using (var streamWriter = new StreamWriter(GetStorage()))
 			{
 				streamWriter.WriteLine(jsonMessages);
@@ -27,10 +35,10 @@ namespace HFNotification
 				using (var streamReader = new StreamReader(GetStorage()))
 				{
 					string jsonMessages = streamReader.ReadToEnd();
-					Messages = JsonConvert.DeserializeObject<List<Message>> (jsonMessages);
+					Messages = JsonConvert.DeserializeObject<List<Message>>(jsonMessages);
 				}
 			}
-			
+
 
 		}
 		private static string GetStorage()
