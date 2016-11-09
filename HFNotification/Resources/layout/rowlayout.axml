@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
-    p1:orientation="horizontal"
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
     p1:layout_width="match_parent"
     p1:layout_height="wrap_content"
     p1:id="@+id/linearLayout1"
-    p1:descendantFocusability="blocksDescendants"
-    p1:weightSum="100">
+    p1:minHeight="70.0dp"
+    p1:descendantFocusability="blocksDescendants">
     <TextView
         p1:textAppearance="?android:attr/textAppearanceLarge"
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
-        p1:layout_weight="95"
+        p1:height="40.0dp"
+        p1:textSize="17sp"
+        p1:padding="10.0dp"
         p1:id="@+id/txtMessage" />
+    <TextView
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="wrap_content"
+        p1:layout_height="match_parent"
+        p1:height="20.0dp"
+        p1:textSize="14sp"
+        p1:paddingLeft="10.0dp"
+        p1:textColor="#687ea3"
+        p1:id="@+id/txtTime"
+        p1:layout_below="@id/txtMessage" />
     <CheckBox
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
         p1:layout_weight="5"
         p1:focusable="false"
         p1:clickable="false"
+        p1:paddingRight="0dp"
         p1:focusableInTouchMode="false"
-        p1:id="@+id/chkMessage" />
-</LinearLayout>
+        p1:id="@+id/chkMessage"
+        p1:layout_alignParentRight="true" />
+</RelativeLayout>
