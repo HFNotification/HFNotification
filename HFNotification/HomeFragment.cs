@@ -19,7 +19,7 @@ namespace HFNotification
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			StoringService.LoadMessages();
-			View view = inflater.Inflate(Resource.Layout.homeLayout, container, false);
+			View view = inflater.Inflate(Resource.Layout.HomeLayout, container, false);
 			listView = view.FindViewById<ListView>(Resource.Id.lvNotifications);
 			adapter = new MessageListAdapter(view.Context, StoringService.Messages);
 			listView.Adapter = adapter;

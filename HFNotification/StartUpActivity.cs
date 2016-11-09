@@ -17,7 +17,6 @@ namespace HFNotification
 		private TextView msgText;
 		private Button tryButton;
 		private ProgressBar startProgressBar;
-		const int trycount = 5;
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
@@ -47,7 +46,7 @@ namespace HFNotification
 
 		public void TryConnection()
 		{
-			for (int tryconnection = 1; tryconnection <= trycount; tryconnection++)
+			for (int tryconnection = 1; tryconnection <= Constants.TRYCOUNT; tryconnection++)
 			{
 				if (IsOnline())
 				{

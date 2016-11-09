@@ -5,5 +5,6 @@ namespace HFNotification
 		public const string NEWCREDSURL = "http://requestb.in/12dmtqp1";
 		public const string UPDATECREDSURL = "http://requestb.in/12dmtqp1";
 		public const int MESSAGESCOUNT = 100;
+		public const int TRYCOUNT = 5;
 	}
 }
