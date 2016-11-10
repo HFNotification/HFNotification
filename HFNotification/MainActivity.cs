@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Preferences;
 using Android.Support.Design.Widget;
+using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
@@ -24,7 +25,7 @@ namespace HFNotification
 		{
 
 			base.OnCreate(savedInstanceState);
-			StoringService.LoadMessages();
+			//StoringService.LoadMessages();
 			SetContentView(Resource.Layout.Main);
 			drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 			// Init toolbar
@@ -48,7 +49,7 @@ namespace HFNotification
 
 			// Create ActionBarDrawerToggle button and add it to the toolbar
 			var drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, Resource.String.open_drawer, Resource.String.close_drawer);
-			drawerLayout.SetDrawerListener(drawerToggle);
+			drawerLayout.AddDrawerListener(drawerToggle);
 			drawerToggle.SyncState();
 
 			//load default home screen
@@ -60,7 +61,7 @@ namespace HFNotification
 		//define custom title text
 		protected override void OnResume()
 		{
-			StoringService.LoadMessages();
+			//StoringService.LoadMessages();
 			SupportActionBar.SetTitle(Resource.String.ApplicationName);
 			base.OnResume();
 		}
@@ -95,18 +96,6 @@ namespace HFNotification
 			drawerLayout.CloseDrawers();
 		}
 
-		//add custom icon to tolbar
-		//public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
-		//{
-		//	MenuInflater.Inflate(Resource.Menu.action_menu, menu);
-		//	if (menu != null)
-		//	{
-		//		menu.FindItem(Resource.Id.action_refresh).SetVisible(true);
-		//		menu.FindItem(Resource.Id.action_attach).SetVisible(false);
-		//	}
-		//	return base.OnCreateOptionsMenu(menu);
-		//}
-		//define action for tolbar icon press
 		public override bool OnOptionsItemSelected(IMenuItem item)
 		{
 			switch (item.ItemId)
@@ -124,14 +113,14 @@ namespace HFNotification
 		//to avoid direct app exit on backpreesed and to show fragment from stack
 		public override void OnBackPressed()
 		{
-			if (FragmentManager.BackStackEntryCount != 1)
+			DrawerLayout layout = (DrawerLayout)FindViewById(Resource.Id.drawer_layout);
+			if (layout.IsDrawerOpen(GravityCompat.Start))
 			{
-				FragmentManager.PopBackStack();// fragmentManager.popBackStack();
+				layout.CloseDrawer(GravityCompat.Start);
 			}
 			else
 			{
 				Finish();
-				//	base.OnBackPressed();
 			}
 		}
 	}

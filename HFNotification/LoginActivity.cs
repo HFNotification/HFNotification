@@ -6,13 +6,12 @@ using System.Net;
 
 namespace HFNotification
 {
-	[Activity(Label = "LoginActivity", Theme = "@android:style/Theme.Material.Light")]
+	[Activity(Label = "LoginActivity",Theme = "@android:style/Theme.Holo.Light.NoActionBar")]
 	public class LoginActivity : Activity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
-
 			SetContentView(Resource.Layout.Login);
 			Button btnLogin= FindViewById<Button>(Resource.Id.btnLogin);
 			EditText etxtEmail = FindViewById<EditText>(Resource.Id.etxtEmail);

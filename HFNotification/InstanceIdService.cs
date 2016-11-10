@@ -22,7 +22,7 @@ namespace HFNotification
 		{
 			// Get updated InstanceID token.
 			// TODO: Implement this method to send any registration to your app's servers.
-			var refreshedToken = FirebaseInstanceId.Instance.Token;
+			string refreshedToken = FirebaseInstanceId.Instance.Token;
 			Android.Util.Log.Debug(TAG, "Refreshed token: " + refreshedToken);
 			SendRegistrationToServer(FirebaseInstanceId.Instance.Token);
 		}

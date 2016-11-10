@@ -32,11 +32,12 @@ namespace HFNotification
 			{
 				try
 				{
-					var url = StoringService.Messages[StoringService.Messages.Count - e.Position - 1].NotificationUrl;
+					string url = StoringService.Messages[StoringService.Messages.Count - e.Position - 1].NotificationUrl;
 					StoringService.Messages[StoringService.Messages.Count - e.Position - 1].Checked = true;
+					StoringService.LoadMessages();
 					adapter.Update(StoringService.Messages);
 					var uri = Android.Net.Uri.Parse(url);
-					var intent = new Intent(Intent.ActionView, uri);
+					Intent intent = new Intent(Intent.ActionView, uri);
 					StartActivity(intent);
 				}
 				catch
@@ -57,7 +58,7 @@ namespace HFNotification
 		public override void OnResume()
 		{
 			base.OnResume();
-			//StoringService.LoadMessages();
+			StoringService.LoadMessages();
 		}
 		public override void OnPause()
 		{
