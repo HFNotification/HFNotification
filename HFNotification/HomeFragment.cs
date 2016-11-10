@@ -34,7 +34,7 @@ namespace HFNotification
 				{
 					string url = StoringService.Messages[StoringService.Messages.Count - e.Position - 1].NotificationUrl;
 					StoringService.Messages[StoringService.Messages.Count - e.Position - 1].Checked = true;
-					StoringService.LoadMessages();
+					StoringService.SaveMessages();
 					adapter.Update(StoringService.Messages);
 					var uri = Android.Net.Uri.Parse(url);
 					Intent intent = new Intent(Intent.ActionView, uri);
