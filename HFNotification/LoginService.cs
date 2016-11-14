@@ -90,9 +90,8 @@ namespace HFNotification
 			{
 				resultstring = streamReader.ReadToEnd();
 			}
-			//RequestResult result = JsonConvert.DeserializeObject<RequestResult>(resultstring);
-			//return result.Result;
-			return true;
+			RequestResult result = JsonConvert.DeserializeObject<RequestResult>(resultstring);
+			return result.Result;
 
 		}
 		static public bool Logout()

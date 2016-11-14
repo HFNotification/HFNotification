@@ -2,7 +2,7 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using Firebase.Iid;
-using System.Net;
+using System;
 
 namespace HFNotification
 {
@@ -30,7 +30,7 @@ namespace HFNotification
 						txtError.Text = GetString(Resource.String.wrong_password);
 					}
 				}
-				catch (WebException)
+				catch (Exception)
 				{
 					txtError.Text = GetString(Resource.String.wrong_url);
 				}

@@ -4,7 +4,7 @@ using Android.Net;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using System.Net;
+using System;
 using System.Threading.Tasks;
 
 
@@ -70,7 +70,7 @@ namespace HFNotification
 								break;
 							}
 						}
-						catch (WebException)
+						catch (Exception)
 						{
 							RunOnUiThread(() => msgText.Text = "Loginization failed!");
 						}
