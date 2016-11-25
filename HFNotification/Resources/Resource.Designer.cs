@@ -2485,17 +2485,14 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a001e
 			public const int multiply = 2131361822;
 			
-			// aapt resource value: 0x7f0a00a2
-			public const int nav_about = 2131361954;
-			
-			// aapt resource value: 0x7f0a00a4
-			public const int nav_exit = 2131361956;
+			// aapt resource value: 0x7f0a00a1
+			public const int nav_about = 2131361953;
 			
 			// aapt resource value: 0x7f0a00a3
-			public const int nav_logout = 2131361955;
+			public const int nav_exit = 2131361955;
 			
-			// aapt resource value: 0x7f0a00a1
-			public const int nav_messages = 2131361953;
+			// aapt resource value: 0x7f0a00a2
+			public const int nav_logout = 2131361954;
 			
 			// aapt resource value: 0x7f0a008d
 			public const int nav_view = 2131361933;

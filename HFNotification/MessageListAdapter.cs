@@ -45,7 +45,7 @@ namespace HFNotification
 			TextView messageview = view.FindViewById<TextView>(Resource.Id.txtMessage);
 			messageview.Text = string.Format(Items[Count - position - 1].AlertType);
 			TextView timeview = view.FindViewById<TextView>(Resource.Id.txtTime);
-			timeview.Text = string.Format(Items[Count - position - 1].CreatedDate.ToString());
+			timeview.Text = string.Format(Items[Count - position - 1].CreatedDate);
 			CheckBox messageviewcheck = view.FindViewById<CheckBox>(Resource.Id.chkMessage);
 			messageviewcheck.Checked= Items[Count - position - 1].Checked;
 			return view;

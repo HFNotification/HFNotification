@@ -19,7 +19,7 @@ namespace HFNotification
 			if (LoginService.LoginStatus)
 			{
 				StoringService.LoadMessages();
-				Message message = new Message(firebasemessage.Data["NotificationUrl"], firebasemessage.Data["AlertType"], DateTime.Parse(firebasemessage.Data["CreatedDate"]));
+				Message message = new Message(firebasemessage.Data["NotificationUrl"], firebasemessage.Data["AlertType"],(firebasemessage.Data["CreatedDate"]));
 				StoringService.AddMessage(message);
 				StoringService.SaveMessages();
 				SendNotification(message);

@@ -74,9 +74,6 @@ namespace HFNotification
 
 			switch (e.MenuItem.ItemId)
 			{
-				case (Resource.Id.nav_messages):
-					Toast.MakeText(this, "Messages selected!", ToastLength.Short).Show();
-					break;
 				case (Resource.Id.nav_about):
 					Toast.MakeText(this, version, ToastLength.Long).Show();
 					break;
