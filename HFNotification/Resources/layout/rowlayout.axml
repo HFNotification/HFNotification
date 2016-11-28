@@ -9,7 +9,6 @@
         p1:textAppearance="?android:attr/textAppearanceLarge"
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
-        p1:height="40.0dp"
         p1:textSize="17sp"
         p1:padding="10.0dp"
         p1:id="@+id/txtMessage" />
@@ -17,7 +16,6 @@
         p1:textAppearance="?android:attr/textAppearanceLarge"
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
-        p1:height="20.0dp"
         p1:textSize="14sp"
         p1:paddingLeft="10.0dp"
         p1:textColor="#687ea3"

@@ -78,14 +78,11 @@ namespace HFNotification
 					Toast.MakeText(this, version, ToastLength.Long).Show();
 					break;
 				case (Resource.Id.nav_logout):
-					Toast.MakeText(this, "You was successfully logout!", ToastLength.Long).Show();
 					LoginService.Logout();
 					StartActivity(typeof(LoginActivity));
 					Finish();
 					break;
 				case (Resource.Id.nav_exit):
-					//Toast.MakeText(this, "Exit selected!", ToastLength.Short).Show();
-					//System.Environment.Exit(0);
 					Finish();
 					break;
 			}
@@ -98,11 +95,7 @@ namespace HFNotification
 			switch (item.ItemId)
 			{
 				case Android.Resource.Id.Home:
-					//this.Activity.Finish();
 					return true;
-				//case Resource.Id.action_attach:
-				//FnAttachImage();
-				//return true;
 				default:
 					return base.OnOptionsItemSelected(item);
 			}

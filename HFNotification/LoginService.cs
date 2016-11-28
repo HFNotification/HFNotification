@@ -4,6 +4,7 @@ using Android.Content;
 using Android.Preferences;
 using Android.App;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace HFNotification
 {
@@ -47,6 +48,40 @@ namespace HFNotification
 				return true;
 			}
 			return false;
+		}
+		static public async Task<bool> LoginAsync(string email, string password, string token)
+		{
+			string data = string.Format("email={0}&password={1}&token={2}", email, password, token);
+			var httpWebRequest = (HttpWebRequest)WebRequest.Create(Constants.NEWCREDSURL);
+			httpWebRequest.ContentType = "application/x-www-form-urlencoded";
+			httpWebRequest.Method = "POST";
+			//WebUtility.UrlEncode(data);
+			httpWebRequest.ContentLength = data.Length;
+			using (var streamWriter = new StreamWriter(await httpWebRequest.GetRequestStreamAsync()))
+			{
+				streamWriter.Write(data);
+				streamWriter.Flush();
+			}
+			var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
+			string resultstring;
+			using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+			{
+				resultstring = await streamReader.ReadToEndAsync();
+				RequestResult requestResult = JsonConvert.DeserializeObject<RequestResult>(resultstring);
+				if (requestResult.Result)
+				{
+					ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+					ISharedPreferencesEditor editor = preferences.Edit();
+					editor.PutString("email", email)
+						.PutString("password", password)
+						.PutString("token", token)
+						.PutBoolean("loged", true)
+						.Apply();
+					return true;
+				}
+				return false;
+			}
+
 		}
 		static public bool Login()
 		{

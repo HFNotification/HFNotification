@@ -2218,11 +2218,11 @@ namespace HFNotification
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a008c
-			public const int HomeFrameLayout = 2131361932;
+			// aapt resource value: 0x7f0a008d
+			public const int HomeFrameLayout = 2131361933;
 			
-			// aapt resource value: 0x7f0a008f
-			public const int action0 = 2131361935;
+			// aapt resource value: 0x7f0a0090
+			public const int action0 = 2131361936;
 			
 			// aapt resource value: 0x7f0a0065
 			public const int action_bar = 2131361893;
@@ -2248,8 +2248,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0066
 			public const int action_context_bar = 2131361894;
 			
-			// aapt resource value: 0x7f0a0093
-			public const int action_divider = 2131361939;
+			// aapt resource value: 0x7f0a0094
+			public const int action_divider = 2131361940;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -2305,8 +2305,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a004e
 			public const int buttonPanel = 2131361870;
 			
-			// aapt resource value: 0x7f0a0090
-			public const int cancel_action = 2131361936;
+			// aapt resource value: 0x7f0a0091
+			public const int cancel_action = 2131361937;
 			
 			// aapt resource value: 0x7f0a0033
 			public const int center = 2131361843;
@@ -2320,11 +2320,11 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a005c
 			public const int checkbox = 2131361884;
 			
-			// aapt resource value: 0x7f0a009e
-			public const int chkMessage = 2131361950;
+			// aapt resource value: 0x7f0a009f
+			public const int chkMessage = 2131361951;
 			
-			// aapt resource value: 0x7f0a0096
-			public const int chronometer = 2131361942;
+			// aapt resource value: 0x7f0a0097
+			public const int chronometer = 2131361943;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int clip_horizontal = 2131361852;
@@ -2371,8 +2371,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0017
 			public const int disableHome = 2131361815;
 			
-			// aapt resource value: 0x7f0a008a
-			public const int drawer_layout = 2131361930;
+			// aapt resource value: 0x7f0a008b
+			public const int drawer_layout = 2131361931;
 			
 			// aapt resource value: 0x7f0a0067
 			public const int edit_query = 2131361895;
@@ -2380,8 +2380,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0025
 			public const int end = 2131361829;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int end_padder = 2131361947;
+			// aapt resource value: 0x7f0a009c
+			public const int end_padder = 2131361948;
 			
 			// aapt resource value: 0x7f0a002e
 			public const int enterAlways = 2131361838;
@@ -2437,14 +2437,14 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0083
 			public const int imgLogo = 2131361923;
 			
-			// aapt resource value: 0x7f0a009a
-			public const int info = 2131361946;
+			// aapt resource value: 0x7f0a009b
+			public const int info = 2131361947;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int item_touch_helper_previous_elevation = 2131361792;
 			
-			// aapt resource value: 0x7f0a008b
-			public const int layout_main = 2131361931;
+			// aapt resource value: 0x7f0a008c
+			public const int layout_main = 2131361932;
 			
 			// aapt resource value: 0x7f0a0037
 			public const int left = 2131361847;
@@ -2452,11 +2452,11 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0013
 			public const int light = 2131361811;
 			
-			// aapt resource value: 0x7f0a0094
-			public const int line1 = 2131361940;
+			// aapt resource value: 0x7f0a0095
+			public const int line1 = 2131361941;
 			
-			// aapt resource value: 0x7f0a0098
-			public const int line3 = 2131361944;
+			// aapt resource value: 0x7f0a0099
+			public const int line3 = 2131361945;
 			
 			// aapt resource value: 0x7f0a0082
 			public const int linearLayout1 = 2131361922;
@@ -2467,11 +2467,14 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a004b
 			public const int list_item = 2131361867;
 			
+			// aapt resource value: 0x7f0a008a
+			public const int loginProgressBar = 2131361930;
+			
 			// aapt resource value: 0x7f0a0081
 			public const int lvNotifications = 2131361921;
 			
-			// aapt resource value: 0x7f0a0092
-			public const int media_actions = 2131361938;
+			// aapt resource value: 0x7f0a0093
+			public const int media_actions = 2131361939;
 			
 			// aapt resource value: 0x7f0a0026
 			public const int middle = 2131361830;
@@ -2479,23 +2482,23 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0041
 			public const int mini = 2131361857;
 			
-			// aapt resource value: 0x7f0a008e
-			public const int msgText = 2131361934;
+			// aapt resource value: 0x7f0a008f
+			public const int msgText = 2131361935;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int multiply = 2131361822;
 			
-			// aapt resource value: 0x7f0a00a1
-			public const int nav_about = 2131361953;
+			// aapt resource value: 0x7f0a00a2
+			public const int nav_about = 2131361954;
+			
+			// aapt resource value: 0x7f0a00a4
+			public const int nav_exit = 2131361956;
 			
 			// aapt resource value: 0x7f0a00a3
-			public const int nav_exit = 2131361955;
+			public const int nav_logout = 2131361955;
 			
-			// aapt resource value: 0x7f0a00a2
-			public const int nav_logout = 2131361954;
-			
-			// aapt resource value: 0x7f0a008d
-			public const int nav_view = 2131361933;
+			// aapt resource value: 0x7f0a008e
+			public const int nav_view = 2131361934;
 			
 			// aapt resource value: 0x7f0a0079
 			public const int navigation_header_container = 2131361913;
@@ -2626,11 +2629,11 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0039
 			public const int start = 2131361849;
 			
-			// aapt resource value: 0x7f0a009f
-			public const int startProgressBar = 2131361951;
+			// aapt resource value: 0x7f0a00a0
+			public const int startProgressBar = 2131361952;
 			
-			// aapt resource value: 0x7f0a0091
-			public const int status_bar_latest_event_content = 2131361937;
+			// aapt resource value: 0x7f0a0092
+			public const int status_bar_latest_event_content = 2131361938;
 			
 			// aapt resource value: 0x7f0a005f
 			public const int submenuarrow = 2131361887;
@@ -2641,11 +2644,11 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0016
 			public const int tabMode = 2131361814;
 			
-			// aapt resource value: 0x7f0a0099
-			public const int text = 2131361945;
+			// aapt resource value: 0x7f0a009a
+			public const int text = 2131361946;
 			
-			// aapt resource value: 0x7f0a0097
-			public const int text2 = 2131361943;
+			// aapt resource value: 0x7f0a0098
+			public const int text2 = 2131361944;
 			
 			// aapt resource value: 0x7f0a0057
 			public const int textSpacerNoButtons = 2131361879;
@@ -2653,8 +2656,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a007e
 			public const int text_input_password_toggle = 2131361918;
 			
-			// aapt resource value: 0x7f0a0095
-			public const int time = 2131361941;
+			// aapt resource value: 0x7f0a0096
+			public const int time = 2131361942;
 			
 			// aapt resource value: 0x7f0a004d
 			public const int title = 2131361869;
@@ -2671,8 +2674,8 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0075
 			public const int touch_outside = 2131361909;
 			
-			// aapt resource value: 0x7f0a00a0
-			public const int tryAgainButton = 2131361952;
+			// aapt resource value: 0x7f0a00a1
+			public const int tryAgainButton = 2131361953;
 			
 			// aapt resource value: 0x7f0a0084
 			public const int txtEmail = 2131361924;
@@ -2680,14 +2683,14 @@ namespace HFNotification
 			// aapt resource value: 0x7f0a0089
 			public const int txtError = 2131361929;
 			
-			// aapt resource value: 0x7f0a009c
-			public const int txtMessage = 2131361948;
+			// aapt resource value: 0x7f0a009d
+			public const int txtMessage = 2131361949;
 			
 			// aapt resource value: 0x7f0a0086
 			public const int txtPassword = 2131361926;
 			
-			// aapt resource value: 0x7f0a009d
-			public const int txtTime = 2131361949;
+			// aapt resource value: 0x7f0a009e
+			public const int txtTime = 2131361950;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int up = 2131361801;
